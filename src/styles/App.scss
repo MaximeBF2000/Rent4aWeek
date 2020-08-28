@@ -1,0 +1,32 @@
+@import "./config";
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $ff;
+  transition: all .3s;
+}
+
+body{
+  background-color: darken($white, 5%);
+}
+
+a, button {
+  all: unset;
+  color: inherit;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar{
+  width: 8px;
+  background-color: #fff;
+}
+::-webkit-scrollbar-thumb{
+  background-color: rgba(darken($white, 50%), .7);
+  border-radius: 50px;
+}
+
+@import "./components/header";
+@import "./components/banner";
+@import "./components/carOptions";

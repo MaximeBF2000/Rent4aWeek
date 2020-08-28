@@ -1,0 +1,40 @@
+@import "../config";
+
+.banner{
+  position: relative;
+  width: 100%;
+  height: 70vh;
+
+  .mainImage{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 10% 65%;
+  }
+
+  .innerBox{
+    position: absolute;
+    background-color: rgba($white, .7);
+    bottom: 0;
+    left: 0;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+    padding: 0 1rem;
+    padding-top: 12rem;
+    padding-bottom: 1rem;
+    width: 350px;
+    border-radius: .25rem;
+
+    .banner_title{
+      line-height: 1;
+      margin-bottom: .5rem;
+      white-space: nowrap;
+    }
+
+    .banner_cta{
+      margin-top: 1rem;
+      background-color: $primaryColor;
+      color: $white;
+    }
+  }
+}

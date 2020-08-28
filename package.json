@@ -1,0 +1,28 @@
+{
+  "name": "Rent4aWeek",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html -p 3000",
+    "build": "parcel build index.html"
+  },
+  "keywords": [],
+  "author": "Maxime BOUNAAS-FERRET",
+  "license": "ISC",
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "date-fns": "^2.16.0",
+    "firebase": "^7.19.1",
+    "framer-motion": "^2.6.5",
+    "react": "^16.13.1",
+    "react-date-range": "^1.0.3",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^5.1.1"
+  },
+  "devDependencies": {
+    "sass": "^1.26.10"
+  }
+}
