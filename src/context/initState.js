@@ -1,6 +1,6 @@
 import lambo_image from "../assets/lambo.jpg"
 import porshSuv_image from "../assets/porshSuv.jpg"
-import offRoadCar_image from "../assets/offRoadCar.jpg"
+import teslaWhiteFace_image from "../assets/tesla_whiteSize.jpg"
 import mercoGreyFront_image from "../assets/merco_greyFront.jpg"
 import bmwWheel_image from "../assets/bmw_wheel.jpg"
 import audiInterior_image from "../assets/audi_interior.jpg"
@@ -9,6 +9,7 @@ import lexusGreySide_image from "../assets/lexus_greySide.jpg"
 import lamboOrangeSize_image from "../assets/lambo_orangeSize.jpg"
 import rangeRoverGreyFace_image from "../assets/rangeRover_greyFace.jpg"
 import porsheBlueBack_image from "../assets/porshe_blueBack.jpg"
+import teslaInterior_image from "../assets/tesla_interior.jpg"
 
 export default {
   user: null,
@@ -25,8 +26,8 @@ export default {
       text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam modi commodi iste? Officiis qui exercitationem mollitia laborum optio, atque"
     },
     {
-      img: offRoadCar_image, 
-      title: "Off-road vehicules", 
+      img: teslaWhiteFace_image, 
+      title: "Electric Cars",
       text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam modi commodi iste? Officiis qui exercitationem mollitia laborum optio, atque"
     },
     {
@@ -67,6 +68,11 @@ export default {
     {
       img: porsheBlueBack_image,
       title: "Porshe",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam modi commodi iste? Officiis qui exercitationem mollitia laborum optio, atque"
+    },
+    {
+      img: teslaInterior_image,
+      title: "Tesla",
       text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam modi commodi iste? Officiis qui exercitationem mollitia laborum optio, atque"
     }
   ]

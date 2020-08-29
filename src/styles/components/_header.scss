@@ -9,7 +9,10 @@
 
   .logo{
     @extend .center-h;
+    cursor: pointer;
     font-size: 1.2rem;
+    
+    &::selection{ background-color: transparent; }
   }
 
   .searchbar{

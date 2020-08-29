@@ -11,5 +11,9 @@
     width: 50%;
     height: 70%;
     background-color: $white;
+
+    input[type="file"]{
+      opacity: 1;
+    }
   }
 }

@@ -78,7 +78,11 @@ a, button {
   padding: 0.3rem 0;
 }
 .header .logo {
+  cursor: pointer;
   font-size: 1.2rem;
+}
+.header .logo::selection {
+  background-color: transparent;
 }
 .header .searchbar {
   flex: 1;
@@ -161,6 +165,9 @@ a, button {
   width: 50%;
   height: 70%;
   background-color: #fefefe;
+}
+.lendFormBackground .lendFormPopup input[type=file] {
+  opacity: 1;
 }
 
 .center, .header .searchbar button, .header .header_right .datePicker, .lendFormBackground {
