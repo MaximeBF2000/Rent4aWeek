@@ -3,6 +3,8 @@ import { AppContext } from "../context/AppContext"
 import { Avatar } from '@material-ui/core'
 import { Button } from "@material-ui/core"
 import DatePicker from "./DatePicker"
+import LendFormPopup from "./LendFormPopup"
+import UserMenu from "./UserMenu"
 
 import DateRangeIcon from '@material-ui/icons/DateRange'
 import EmojiTransportationIcon from '@material-ui/icons/EmojiTransportation'
@@ -11,6 +13,8 @@ import SearchIcon from '@material-ui/icons/Search'
 export default function Header() {
   const { searchQuery, dispatch } = useContext(AppContext)
   const [showDatePicker, setShowDatePicker] = useState(false)
+  const [showLendForm, setShowLendForm] = useState(false)
+  const [showUserMenu, setShowUserMenu] = useState(false)
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -40,13 +44,15 @@ export default function Header() {
         </button>
         <DatePicker visible={showDatePicker} />
 
-        <Button className="lend">
+        <Button className="lend" onClick={() => setShowLendForm(ps => !ps)}>
           Lend your car
         </Button>
+        <LendFormPopup visible={showLendForm} close={() => setShowLendForm(false)} />
 
-        <button className="user">
+        <button className="user" onClick={() => setShowUserMenu(ps => !ps)}>
           <Avatar />
         </button>
+        <UserMenu visible={showUserMenu} />
       </div>
     </header>
   )

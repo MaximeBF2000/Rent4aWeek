@@ -24,9 +24,9 @@ a, button {
 }
 ::-webkit-scrollbar-thumb{
   background-color: rgba(darken($white, 50%), .7);
-  border-radius: 50px;
 }
 
 @import "./components/header";
+@import "./components/lendForm";
 @import "./components/banner";
 @import "./components/carOptions";

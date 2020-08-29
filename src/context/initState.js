@@ -11,6 +11,7 @@ import rangeRoverGreyFace_image from "../assets/rangeRover_greyFace.jpg"
 import porsheBlueBack_image from "../assets/porshe_blueBack.jpg"
 
 export default {
+  user: null,
   searchQuery: "",
   cards: [
     {

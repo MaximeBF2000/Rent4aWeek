@@ -59,7 +59,7 @@
   }
 
   .datePickerContainer{
-    z-index: 1000;
+    z-index: 2;
     position: absolute;
     top: calc(100% + .5rem);
     right: 2rem;
@@ -69,6 +69,35 @@
       border-radius: .25rem;
       overflow: hidden;
       box-shadow: 2px 2px 10px grey;
+    }
+  }
+
+  .userMenu{
+    z-index: 1;
+    position: absolute;
+    top: calc(100% + 1rem);
+    background-color: darken($white, 10%);
+    color: $black;
+    right: 1.5rem;
+
+    &::before{
+      position: absolute;
+      content: "";
+      bottom: 100%;
+      right: 1rem;
+      border: solid transparent;
+      border-width: .7rem;
+      border-bottom-color: darken($white, 10%);
+    }
+
+    .userOption{
+      width: 100%;
+      padding: .5rem;
+      cursor: pointer;
+
+      &:hover{
+        background-color: darken($white, 20%);
+      }
     }
   }
 

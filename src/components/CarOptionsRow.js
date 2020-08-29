@@ -10,6 +10,7 @@ export default function CarOptionsRow() {
       {
         cards.map((card, i) => (
           <CarMainOption 
+            key={i}
             img={card.img}
             title={card.title}
             text={card.text}
