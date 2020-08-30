@@ -60,5 +60,15 @@
 @media screen and (max-width: $bpS){
   .carOptions{
     grid-template-columns: 1fr;
+
+    .carOption{
+      &.mainOption{
+        margin-bottom: unset;
+
+        &:nth-child(3){
+          margin-bottom: 5rem;
+        }
+      }
+    }
   }
 }
