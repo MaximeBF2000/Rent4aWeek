@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { AppContext } from "../context/AppContext"
+import { Link } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
 
 export default function UserMenu({ visible }) {
@@ -20,8 +21,8 @@ export default function UserMenu({ visible }) {
             className="userMenu"
             {...userMenuProps}
           >
-            <div className="userOption">Se connecter</div>
-            <div className="userOption">S'inscrire</div>
+            <div className="userOption"> <Link to="login">Login</Link> </div>
+            <div className="userOption"> <Link to="register">Register</Link> </div>
           </motion.div>
         )}
       </AnimatePresence>

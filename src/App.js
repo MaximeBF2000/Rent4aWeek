@@ -1,15 +1,28 @@
 import React from 'react'
+import { BrowserRouter, Switch, Route } from "react-router-dom"
 import "./styles/App.scss"
 import Header from './components/Header'
 import Banner from './components/Banner'
 import CarMainOptionsRow from './components/CarOptionsRow'
+import Login from "./components/Login"
+import Register from "./components/Register"
 
 export default function App() {
   return (
-    <>
+    <BrowserRouter>
       <Header />
-      <Banner />
-      <CarMainOptionsRow />
-    </>
+      <Switch>
+        <Route exact path="/">
+          <Banner />
+          <CarMainOptionsRow />
+        </Route>
+        <Route exact path="/login">
+          <Login />
+        </Route>
+        <Route exact path="/register">
+          <Register />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   )
 }

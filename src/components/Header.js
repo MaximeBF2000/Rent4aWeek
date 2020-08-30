@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { AppContext } from "../context/AppContext"
+import { Link } from "react-router-dom"
 import { Avatar } from '@material-ui/core'
 import { Button } from "@material-ui/core"
 import DatePicker from "./DatePicker"
@@ -27,7 +28,9 @@ export default function Header() {
     <header className="header">
       <div className="header_left">
         <div className="logo">
-          <EmojiTransportationIcon style={{ marginRight: 5 }} /> Rent4aWeek
+          <Link to ="/">
+            <EmojiTransportationIcon style={{ marginRight: 5 }} /> Rent4aWeek
+          </Link>
         </div>
       </div>
 

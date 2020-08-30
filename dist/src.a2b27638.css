@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
-.center, .lendFormBackground, .header .header_right .datePicker, .header .searchbar button {
+.center, .lendFormBackground .lendFormPopup .formControl .fileBtn, .lendFormBackground, .login .registerBox, .login .loginBox, .login, .header .header_right .datePicker, .header .searchbar button {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,6 +21,11 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
 }
 
 * {
@@ -50,7 +55,7 @@ a, button {
   background-color: rgba(127, 127, 127, 0.7);
 }
 
-.center, .lendFormBackground, .header .header_right .datePicker, .header .searchbar button {
+.center, .lendFormBackground .lendFormPopup .formControl .fileBtn, .lendFormBackground, .login .registerBox, .login .loginBox, .login, .header .header_right .datePicker, .header .searchbar button {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -69,6 +74,11 @@ a, button {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
 }
 
 .header {
@@ -152,6 +162,56 @@ a, button {
 .header .userMenu .userOption:hover {
   background-color: #cbcbcb;
 }
+.header .userMenu .userOption a {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.login h2 {
+  margin-bottom: 2rem;
+}
+.login .loginBox {
+  margin: 2rem;
+  width: 30% !important;
+  height: 70vh;
+  background-color: #fefefe;
+  padding: 2rem;
+}
+.login .loginBox .loginBtn {
+  background-color: #f0c243;
+  color: #fefefe;
+  width: 70%;
+  padding: 0.3rem 0;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+.login .loginBox .loginBtn.loginWithFacebookBtn {
+  background-color: #4867AA;
+}
+.login .registerBox {
+  margin: 2rem;
+  width: 30% !important;
+  height: 70vh;
+  background-color: #fefefe;
+  padding: 2rem;
+}
+.login .registerBox .registerWithGoogleBtn {
+  background-color: #f0c243;
+  color: #fefefe;
+  width: 70%;
+  padding: 0.3rem 0;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+.login .registerBox .registerWithFacebookBtn {
+  background-color: #f0c243;
+  color: #fefefe;
+  width: 70%;
+  padding: 0.3rem 0;
+  margin: 0.5rem 0;
+  text-align: center;
+  background-color: #4867AA;
+}
 
 .lendFormBackground {
   position: fixed;
@@ -165,12 +225,52 @@ a, button {
   width: 50%;
   height: 70%;
   background-color: #fefefe;
+  padding: 1rem;
 }
-.lendFormBackground .lendFormPopup input[type=file] {
-  opacity: 1;
+.lendFormBackground .lendFormPopup .formControl {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 1.5rem auto;
+}
+.lendFormBackground .lendFormPopup .formControl.row {
+  flex-direction: row;
+}
+.lendFormBackground .lendFormPopup .formControl label {
+  margin-bottom: 0.5rem;
+}
+.lendFormBackground .lendFormPopup .formControl input[type=text] {
+  outline: none;
+  padding: 0.5rem 0.3rem;
+}
+.lendFormBackground .lendFormPopup .formControl input[type=date]::-webkit-calendar-picker-indicator {
+  position: relative;
+}
+.lendFormBackground .lendFormPopup .formControl .fileBtn {
+  position: relative;
+  transform: translate(0.5rem, -15%);
+  width: fit-content;
+  height: fit-content;
+  padding: 0.2rem;
+  background-color: #f0c243;
+  color: #fefefe;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.lendFormBackground .lendFormPopup .formControl .fileBtn input[type=file] {
+  z-index: 100;
+  pointer-events: all;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  width: 100%;
 }
 
-.center, .header .searchbar button, .header .header_right .datePicker, .lendFormBackground {
+.center, .header .searchbar button, .header .header_right .datePicker, .login, .login .loginBox, .login .registerBox, .lendFormBackground, .lendFormBackground .lendFormPopup .formControl .fileBtn {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -189,6 +289,11 @@ a, button {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
 }
 
 .banner {
@@ -226,7 +331,7 @@ a, button {
   color: #fefefe;
 }
 
-.center, .header .searchbar button, .header .header_right .datePicker, .lendFormBackground {
+.center, .header .searchbar button, .header .header_right .datePicker, .login, .login .loginBox, .login .registerBox, .lendFormBackground, .lendFormBackground .lendFormPopup .formControl .fileBtn {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -245,6 +350,11 @@ a, button {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
 }
 
 .carOptions {

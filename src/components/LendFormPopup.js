@@ -3,6 +3,8 @@ import ReactDom from "react-dom"
 import { AppContext } from "../context/AppContext"
 import { motion, AnimatePresence } from "framer-motion"
 
+import AddIcon from '@material-ui/icons/Add'
+
 export default function LendFormPopup({ visible, close }) {
   const { user } = useContext(AppContext)
   
@@ -42,9 +44,12 @@ export default function LendFormPopup({ visible, close }) {
               <label htmlFor="carDate">Car date</label>
               <input type="date" name="carDate" />
             </div>
-            <div className="formControl">
+            <div className="formControl row">
               <label htmlFor="carPhotos">Add car photos</label>
-              <input type="file" name="carPhotos" />
+              <button className="fileBtn">
+                <AddIcon />
+                <input type="file" name="carPhotos" />
+              </button>
             </div>
             <h4>ADD LOCATION WITH ALGOLIA PLACES API</h4>
           </motion.form>
