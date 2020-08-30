@@ -40,6 +40,11 @@ body {
   background-color: #f1f1f1;
 }
 
+#root {
+  width: 100%;
+  height: 100%;
+}
+
 a, button {
   all: unset;
   color: inherit;
@@ -86,6 +91,7 @@ a, button {
   background-color: #f0c243;
   color: #fefefe;
   padding: 0.3rem 0;
+  width: 100%;
 }
 .header .logo {
   cursor: pointer;
@@ -167,6 +173,14 @@ a, button {
   height: 100% !important;
 }
 
+@media screen and (max-width: 550px) {
+  .header .searchbar {
+    display: none;
+  }
+  .header .header_right {
+    display: none !important;
+  }
+}
 .login h2 {
   margin-bottom: 2rem;
 }
@@ -331,6 +345,33 @@ a, button {
   color: #fefefe;
 }
 
+@media screen and (max-width: 550px) {
+  .banner {
+    height: fit-content;
+    margin-bottom: 10rem;
+  }
+  .banner .mainImage {
+    object-fit: contain;
+  }
+  .banner .innerBox {
+    top: 98%;
+    left: 0;
+    margin: 0;
+    padding: 1rem;
+    width: 100%;
+    height: fit-content;
+    background-color: #b2b2b2;
+  }
+  .banner .innerBox .banner_title {
+    font-size: 1.4rem;
+  }
+  .banner .innerBox .banner_text {
+    font-size: 1rem;
+  }
+  .banner .innerBox .banner_cta {
+    font-size: 1rem;
+  }
+}
 .center, .header .searchbar button, .header .header_right .datePicker, .login, .login .loginBox, .login .registerBox, .lendFormBackground, .lendFormBackground .lendFormPopup .formControl .fileBtn {
   display: flex;
   flex-direction: column;
@@ -358,6 +399,7 @@ a, button {
 }
 
 .carOptions {
+  max-width: 100vw;
   width: 90%;
   display: grid;
   margin: 0 auto;
@@ -377,10 +419,10 @@ a, button {
   margin-bottom: 5rem;
 }
 .carOptions .carOption:hover {
-  transform: scale(1.12);
+  transform: scale(1.08);
 }
 .carOptions .carOption .optionImage {
-  width: 100%;
+  width: fit-content;
   height: 200px;
 }
 .carOptions .carOption .optionImage img {
@@ -403,6 +445,12 @@ a, button {
   padding-bottom: 0.5rem;
   line-height: 1.2;
   font-style: italic;
+}
+
+@media screen and (max-width: 550px) {
+  .carOptions {
+    grid-template-columns: 1fr;
+  }
 }
 .rdrCalendarWrapper {
   box-sizing: border-box;

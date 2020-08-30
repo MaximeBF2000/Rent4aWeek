@@ -1,6 +1,7 @@
 @import "../config";
 
 .carOptions{
+  max-width: 100vw;
   width: 90%;
   display: grid;
   margin: 0 auto;
@@ -21,11 +22,11 @@
     }
 
     &:hover{
-      transform: scale(1.12);
+      transform: scale(1.08);
     }
 
     .optionImage{
-      width: 100%;
+      width: fit-content;
       height: 200px;
       
       img{
@@ -53,5 +54,11 @@
         font-style: italic;
       }
     }
+  }
+}
+
+@media screen and (max-width: $bpS){
+  .carOptions{
+    grid-template-columns: 1fr;
   }
 }

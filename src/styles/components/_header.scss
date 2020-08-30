@@ -6,6 +6,7 @@
   background-color: $primaryColor;
   color: $white;
   padding: .3rem 0;
+  width: 100%;
 
   .logo{
     @extend .center-h;
@@ -108,5 +109,16 @@
       }
     }
   }
+}
 
+@media screen and (max-width: $bpS){
+  .header{
+
+    .searchbar{
+      display: none;
+    }
+    .header_right{
+      display: none !important;
+    }
+  }
 }
