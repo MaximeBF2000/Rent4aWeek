@@ -16,13 +16,13 @@ export default {
   searchQuery: "",
   cards: [
     {
-      img: lambo_image, 
-      title: "Fast sports cars", 
+      img: lambo_image,
+      title: "Fast sports cars",
       text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam modi commodi iste? Officiis qui exercitationem mollitia laborum optio, atque"
     },
     {
       img: porshSuv_image, 
-      title: "Comfort Extreme", 
+      title: "Comfort Extreme",
       text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam modi commodi iste? Officiis qui exercitationem mollitia laborum optio, atque"
     },
     {

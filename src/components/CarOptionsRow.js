@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import { AppContext } from "../context/AppContext"
-import App from '../App'
-import CarMainOption from './CarOption'
+import CarOption from './CarOption'
 
 export default function CarOptionsRow() {
   const { cards } = useContext(AppContext)
@@ -9,7 +8,7 @@ export default function CarOptionsRow() {
     <div className="carOptions">
       {
         cards.map((card, i) => (
-          <CarMainOption 
+          <CarOption 
             key={i}
             img={card.img}
             title={card.title}

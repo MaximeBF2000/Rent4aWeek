@@ -273,6 +273,11 @@ a, button {
 .lendFormBackground .lendFormPopup .formControl .photosDragndropZone.draggingIn .photosDropzoneText {
   color: #07c1ff;
 }
+.lendFormBackground .lendFormPopup .submitBtn {
+  color: #f0c243;
+  border-color: #f0c243;
+}
+
 .lendCar_photosPreview {
   display: flex;
 }
