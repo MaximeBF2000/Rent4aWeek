@@ -6,14 +6,13 @@ export default function LendCarPhotoPreview({ photos, setPhotos }) {
       photo.name !== photoToDelete.name
     ))
     setPhotos(withoutPhoto)
-    console.log(withoutPhoto)
   }
 
   return (
     <div className="lendCar_photosPreview">
       {
-        photos && photos.map(photo => (
-          <div className="photoPreview" key={photo.name+photo.size} onClick={() => deletePhoto(photo)}>
+        photos && photos.map((photo, i) => (
+          <div className="photoPreview" key={i} onClick={() => deletePhoto(photo)}>
             <img src={photo.preview} alt={photo.name} />
           </div>
         ))

@@ -21,8 +21,8 @@ export default function UserMenu({ visible }) {
             className="userMenu"
             {...userMenuProps}
           >
-            <div className="userOption"> <Link to="login">Login</Link> </div>
-            <div className="userOption"> <Link to="register">Register</Link> </div>
+            <Link to="/login"> <div className="userOption"> Login </div> </Link>
+            <Link to="/register"> <div className="userOption"> Register </div> </Link>
           </motion.div>
         )}
       </AnimatePresence>

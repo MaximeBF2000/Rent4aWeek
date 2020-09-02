@@ -9,32 +9,33 @@ import AlgoliaPlaces from 'algolia-places-react'
 
 
 export default function LendFormPopup({ visible, close }) {
-  const { user, dispatch } = useContext(AppContext)
+  const { user } = useContext(AppContext)
+
+  const [carModel, setCarModel] = useState("")
   const [photos, setPhotos] = useState([])
+  const [city, setCity] = useState(null)
 
   const { getRootProps, getInputProps } = useDropzone({
     accept: "image/*",
     onDragEnter: e => e.target.classList.toggle("draggingIn"),
     onDragLeave: e => e.target.classList.toggle("draggingIn"),
     onDrop: files => {
+      document.querySelector(".photosDragndropZone").classList.remove("draggingIn")
       const newPhotos = files.map(file => Object.assign(file, { preview: URL.createObjectURL(file) }))
-      setPhotos(oldPhotos => [...oldPhotos , ...newPhotos])
-      console.log(photos)
+      setPhotos( oldPhotos => [...oldPhotos, ...newPhotos] )
     }
   })
   
-  const handleClose = e => {
-    if(e.target.classList.contains("lendFormBackground")){
-      close()
-    }
-  }
+  const handleClose = e => { if(e.target.classList.contains("lendFormBackground")) close() }
 
   const handleLocationChange = LocationInfos => {
+    setCity(LocationInfos.suggestion.county)
     console.log(LocationInfos)
   }
 
   const handleFormSubmit = e => {
     e.preventDefault()
+    console.log({ carModel, photos, city })
   }
 
   return ReactDom.createPortal(
@@ -57,7 +58,7 @@ export default function LendFormPopup({ visible, close }) {
           >
             <div className="formControl">
               <label htmlFor="carName">Car model</label>
-              <input type="text" name="carName" />
+              <input type="text" name="carName" value={carModel} onChange={e => setCarModel(e.target.value)} />
             </div>
             <div className="formControl">
               <label htmlFor="carPhotos">Add car photos</label>
@@ -74,7 +75,6 @@ export default function LendFormPopup({ visible, close }) {
               <AlgoliaPlaces
                 name="rentPlace"
                 placeholder="Write your city here"
-
                 options={{
                   appId: "plE9LBPFKBZ9",
                   apiKey: "0c69ac4769be55c13f86ad71c5b54c47",
@@ -82,17 +82,12 @@ export default function LendFormPopup({ visible, close }) {
                   countries: ["us", "gb", "au", "ca"],
                   type: "city"
                 }}
-
                 onChange={handleLocationChange}
               />
             </div>
 
-            <Button 
-              className="submitBtn"
-              variant="outlined"
-              type="submit"
-            > 
-              Lend my car 
+            <Button className="submitBtn" variant="outlined" type="submit"> 
+              Lend my car
             </Button>
           </motion.form>
         </motion.div>

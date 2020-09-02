@@ -166,10 +166,6 @@ a, button {
 .header .userMenu .userOption:hover {
   background-color: #cbcbcb;
 }
-.header .userMenu .userOption a {
-  width: 100% !important;
-  height: 100% !important;
-}
 
 @media screen and (max-width: 550px) {
   .header .searchbar {
