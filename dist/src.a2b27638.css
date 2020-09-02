@@ -2,15 +2,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
-.center, .lendFormBackground .lendFormPopup .formControl .fileBtn, .lendFormBackground, .login .registerBox, .login .loginBox, .login, .header .header_right .datePicker, .header .searchbar button {
+.center, .lendCar_photosPreview .photoPreview::before, .lendFormBackground, .login .registerBox, .login .loginBox, .login, .header .header_right .datePicker, .header .searchbar button {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.center-v {
-  width: 100%;
+.center-v, .lendFormBackground .lendFormPopup {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,15 +59,14 @@ a, button {
   background-color: rgba(127, 127, 127, 0.7);
 }
 
-.center, .lendFormBackground .lendFormPopup .formControl .fileBtn, .lendFormBackground, .login .registerBox, .login .loginBox, .login, .header .header_right .datePicker, .header .searchbar button {
+.center, .lendCar_photosPreview .photoPreview::before, .lendFormBackground, .login .registerBox, .login .loginBox, .login, .header .header_right .datePicker, .header .searchbar button {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.center-v {
-  width: 100%;
+.center-v, .lendFormBackground .lendFormPopup {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -237,7 +235,7 @@ a, button {
 }
 .lendFormBackground .lendFormPopup {
   width: 50%;
-  height: 70%;
+  min-height: 80%;
   background-color: #fefefe;
   padding: 1rem;
 }
@@ -247,9 +245,6 @@ a, button {
   flex-direction: column;
   width: 50%;
   margin: 1.5rem auto;
-}
-.lendFormBackground .lendFormPopup .formControl.row {
-  flex-direction: row;
 }
 .lendFormBackground .lendFormPopup .formControl label {
   margin-bottom: 0.5rem;
@@ -261,38 +256,65 @@ a, button {
 .lendFormBackground .lendFormPopup .formControl input[type=date]::-webkit-calendar-picker-indicator {
   position: relative;
 }
-.lendFormBackground .lendFormPopup .formControl .fileBtn {
-  position: relative;
-  transform: translate(0.5rem, -15%);
-  width: fit-content;
-  height: fit-content;
-  padding: 0.2rem;
-  background-color: #f0c243;
-  color: #fefefe;
-  border-radius: 50%;
-  pointer-events: none;
+.lendFormBackground .lendFormPopup .formControl .photosDragndropZone {
+  border: dashed 1px #676767;
+  padding: 1rem 3rem;
 }
-.lendFormBackground .lendFormPopup .formControl .fileBtn input[type=file] {
-  z-index: 100;
-  pointer-events: all;
+.lendFormBackground .lendFormPopup .formControl .photosDragndropZone input[type=file] {
+  outline: none;
+}
+.lendFormBackground .lendFormPopup .formControl .photosDragndropZone .photosDropzoneText {
+  pointer-events: none;
+  color: #676767;
+}
+.lendFormBackground .lendFormPopup .formControl .photosDragndropZone.draggingIn {
+  border: dashed 1px #07c1ff;
+}
+.lendFormBackground .lendFormPopup .formControl .photosDragndropZone.draggingIn .photosDropzoneText {
+  color: #07c1ff;
+}
+.lendCar_photosPreview {
+  display: flex;
+}
+.lendCar_photosPreview .photoPreview {
+  position: relative;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  margin: 0 0.3rem;
+  padding: 0.2rem;
+}
+.lendCar_photosPreview .photoPreview::before {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #b81515;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  color: #fefefe;
+}
+.lendCar_photosPreview .photoPreview:hover {
+  background-color: rgba(1, 1, 1, 0.2);
+}
+.lendCar_photosPreview .photoPreview:hover::before {
+  content: "X";
+}
+.lendCar_photosPreview .photoPreview img {
   width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-.center, .header .searchbar button, .header .header_right .datePicker, .login, .login .loginBox, .login .registerBox, .lendFormBackground, .lendFormBackground .lendFormPopup .formControl .fileBtn {
+.center, .header .searchbar button, .header .header_right .datePicker, .login, .login .loginBox, .login .registerBox, .lendFormBackground, .lendCar_photosPreview .photoPreview::before {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.center-v {
-  width: 100%;
+.center-v, .lendFormBackground .lendFormPopup {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -372,15 +394,14 @@ a, button {
     font-size: 1rem;
   }
 }
-.center, .header .searchbar button, .header .header_right .datePicker, .login, .login .loginBox, .login .registerBox, .lendFormBackground, .lendFormBackground .lendFormPopup .formControl .fileBtn {
+.center, .header .searchbar button, .header .header_right .datePicker, .login, .login .loginBox, .login .registerBox, .lendFormBackground, .lendCar_photosPreview .photoPreview::before {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.center-v {
-  width: 100%;
+.center-v, .lendFormBackground .lendFormPopup {
   display: flex;
   flex-direction: column;
   align-items: center;

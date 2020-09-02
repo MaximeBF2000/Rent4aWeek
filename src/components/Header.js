@@ -12,7 +12,7 @@ import EmojiTransportationIcon from '@material-ui/icons/EmojiTransportation'
 import SearchIcon from '@material-ui/icons/Search'
 
 export default function Header() {
-  const { searchQuery, dispatch } = useContext(AppContext)
+  const { searchQuery, user, dispatch } = useContext(AppContext)
   const [showDatePicker, setShowDatePicker] = useState(false)
   const [showLendForm, setShowLendForm] = useState(false)
   const [showUserMenu, setShowUserMenu] = useState(false)
@@ -47,6 +47,7 @@ export default function Header() {
         </button>
         <DatePicker visible={showDatePicker} />
 
+        {/* 👇 FOR PROD -->  disabled={!user} */}
         <Button className="lend" onClick={() => setShowLendForm(ps => !ps)}>
           Lend your car
         </Button>

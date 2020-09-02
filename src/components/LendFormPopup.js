@@ -1,12 +1,27 @@
-import React, { useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import ReactDom from "react-dom"
+import LendCarPhotoPreview from "./LendCarPhotoPreview"
 import { AppContext } from "../context/AppContext"
+import { Button } from "@material-ui/core"
 import { motion, AnimatePresence } from "framer-motion"
+import { useDropzone } from "react-dropzone"
+import AlgoliaPlaces from 'algolia-places-react'
 
-import AddIcon from '@material-ui/icons/Add'
 
 export default function LendFormPopup({ visible, close }) {
-  const { user } = useContext(AppContext)
+  const { user, dispatch } = useContext(AppContext)
+  const [photos, setPhotos] = useState([])
+
+  const { getRootProps, getInputProps } = useDropzone({
+    accept: "image/*",
+    onDragEnter: e => e.target.classList.toggle("draggingIn"),
+    onDragLeave: e => e.target.classList.toggle("draggingIn"),
+    onDrop: files => {
+      const newPhotos = files.map(file => Object.assign(file, { preview: URL.createObjectURL(file) }))
+      setPhotos(oldPhotos => [...oldPhotos , ...newPhotos])
+      console.log(photos)
+    }
+  })
   
   const handleClose = e => {
     if(e.target.classList.contains("lendFormBackground")){
@@ -14,10 +29,13 @@ export default function LendFormPopup({ visible, close }) {
     }
   }
 
-  // FOR PROD
-  // if(visible && !user){
-  //   alert("You need to be connected to lend your car")
-  // }
+  const handleLocationChange = LocationInfos => {
+    console.log(LocationInfos)
+  }
+
+  const handleFormSubmit = e => {
+    e.preventDefault()
+  }
 
   return ReactDom.createPortal(
     <AnimatePresence>
@@ -32,26 +50,50 @@ export default function LendFormPopup({ visible, close }) {
         >
           <motion.form 
             className="lendFormPopup"
+            onSubmit={handleFormSubmit}
             initial={{ y: "-100vh" }}
             animate={{ y: 0 }}
             exit={{ y: "-100vh" }}
           >
             <div className="formControl">
-              <label htmlFor="carName">Car name</label>
+              <label htmlFor="carName">Car model</label>
               <input type="text" name="carName" />
             </div>
             <div className="formControl">
-              <label htmlFor="carDate">Car date</label>
-              <input type="date" name="carDate" />
-            </div>
-            <div className="formControl row">
               <label htmlFor="carPhotos">Add car photos</label>
-              <button className="fileBtn">
-                <AddIcon />
-                <input type="file" name="carPhotos" />
-              </button>
+              <div className="photosDragndropZone" { ...getRootProps() }>
+                <input type="file" { ...getInputProps() } name="carPhotos" />
+                <p className="photosDropzoneText">
+                  Upload your photos here...
+                </p>
+              </div>
             </div>
-            <h4>ADD LOCATION WITH ALGOLIA PLACES API</h4>
+            <LendCarPhotoPreview photos={photos} setPhotos={setPhotos} />
+            <div className="formControl">
+              <label htmlFor="rentPlace">Where do you rent your car ?</label>
+              <AlgoliaPlaces
+                name="rentPlace"
+                placeholder="Write your city here"
+
+                options={{
+                  appId: "plE9LBPFKBZ9",
+                  apiKey: "0c69ac4769be55c13f86ad71c5b54c47",
+                  language: "en",
+                  countries: ["us", "gb", "au", "ca"],
+                  type: "city"
+                }}
+
+                onChange={handleLocationChange}
+              />
+            </div>
+
+            <Button 
+              className="submitBtn"
+              variant="outlined"
+              type="submit"
+            > 
+              Lend my car 
+            </Button>
           </motion.form>
         </motion.div>
       )}

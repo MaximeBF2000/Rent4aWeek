@@ -3,9 +3,10 @@ import { BrowserRouter, Switch, Route } from "react-router-dom"
 import "./styles/App.scss"
 import Header from './components/Header'
 import Banner from './components/Banner'
-import CarMainOptionsRow from './components/CarOptionsRow'
+import CarOptionsRow from './components/CarOptionsRow'
 import Login from "./components/Login"
 import Register from "./components/Register"
+
 
 export default function App() {
   return (
@@ -14,7 +15,7 @@ export default function App() {
       <Switch>
         <Route exact path="/">
           <Banner />
-          <CarMainOptionsRow />
+          <CarOptionsRow />
         </Route>
         <Route exact path="/login">
           <Login />

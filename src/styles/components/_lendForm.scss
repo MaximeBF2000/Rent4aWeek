@@ -8,8 +8,9 @@
   background-color: rgba($black, .7);
 
   .lendFormPopup{
+    @extend .center-v;
     width: 50%;
-    height: 70%;
+    min-height: 80%;
     background-color: $white;
     padding: 1rem;
 
@@ -19,10 +20,6 @@
       flex-direction: column;
       width: 50%;
       margin: 1.5rem auto;
-
-      &.row{
-        flex-direction: row;
-      }
 
       label{
         margin-bottom: .5rem;
@@ -38,30 +35,71 @@
           }
         }
       }
-      .fileBtn{
-        position: relative;
-        @extend .center;
-        transform: translate(.5rem, -15%);
-        width: fit-content;
-        height: fit-content;
-        padding: .2rem;
-        background-color: $primaryColor;
-        color: $white;
-        border-radius: 50%;
-        pointer-events: none;
+      .photosDragndropZone{
+        border: dashed 1px lighten($black, 40%);
+        padding: 1rem 3rem;
 
         input[type="file"]{
-          z-index: 100;
-          pointer-events: all;
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          opacity: 0;
-          width: 100%;
+          outline: none;
+        }
+
+        .photosDropzoneText{
+          pointer-events: none;
+          color: lighten($black, 40%);
+        }
+
+        &.draggingIn{
+          border: dashed 1px #07c1ff;
+          
+          .photosDropzoneText{
+            color: #07c1ff;
+          }
         }
       }
+    }
+
+    .submitBtn{
+      
+    }
+  }
+}
+
+.lendCar_photosPreview{
+  display: flex;
+
+  .photoPreview{
+    position: relative;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    margin: 0 .3rem;
+    padding: .2rem;
+
+    &::before{
+      @extend .center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #b81515;
+      width: 50%;
+      height: 50%;
+      border-radius: 50%;
+      color: $white;
+    }
+
+    &:hover{
+      background-color: rgba($black, .2);
+
+      &::before{
+        content: "X";
+      }
+    }
+
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
   }
 }
