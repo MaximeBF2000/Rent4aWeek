@@ -2,8 +2,7 @@ import React from 'react'
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom"
 import "./styles/App.scss"
 import Header from './components/Header'
-import Login from "./components/Login"
-import Register from "./components/Register"
+import SignIn from "./components/SignIn"
 
 import Homepage from "./pages/HomePage"
 import SearchPage from "./pages/SearchPage"
@@ -17,11 +16,8 @@ export default function App() {
         <Route exact path="/">
           <Homepage />
         </Route>
-        <Route exact path="/login">
-          <Login />
-        </Route>
-        <Route exact path="/register">
-          <Register />
+        <Route exact path="/signin">
+          <SignIn />
         </Route>
         <Route path="/search/:category">
           <SearchPage />

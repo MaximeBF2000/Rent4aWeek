@@ -22,27 +22,12 @@
   h2{
     margin-bottom: 2rem;
   }
-
-  .loginBox{
+  
+  .signInBox{
     @include logBackground();
 
-    .loginBtn{
+    .signInWithGoogleBtn{
       @include logBtn();
-
-      &.loginWithFacebookBtn{
-        background-color: #4867AA;
-      }
-    }
-  }
-  .registerBox{
-    @include logBackground();
-
-    .registerWithGoogleBtn{
-      @include logBtn();
-    }
-    .registerWithFacebookBtn{
-      @include logBtn();
-      background-color: #4867AA;
     }
   }
 }

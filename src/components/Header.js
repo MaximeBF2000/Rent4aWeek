@@ -24,6 +24,14 @@ export default function Header() {
 
   const handleSearchChange = e => dispatch({ type: "UPDATE_SEARCH_QUERY", payload: e.target.value })
 
+  const handleLendBtn = () => {
+    if(user){
+      setShowLendForm(ps => !ps)
+    } else {
+      alert("You need to be connected to lend your car")
+    }
+  }
+
   return (
     <header className="header">
       <div className="header_left">
@@ -48,13 +56,13 @@ export default function Header() {
         <DatePicker visible={showDatePicker} />
 
         {/* 👇 FOR PROD -->  disabled={!user} */}
-        <Button className="lend" onClick={() => setShowLendForm(ps => !ps)}>
+        <Button className="lend" onClick={handleLendBtn}>
           Lend your car
         </Button>
         <LendFormPopup visible={showLendForm} close={() => setShowLendForm(false)} />
 
         <button className="user" onClick={() => setShowUserMenu(ps => !ps)}>
-          <Avatar />
+          <Avatar src={user ? user.photoURL : null} />
         </button>
         <UserMenu visible={showUserMenu} />
       </div>

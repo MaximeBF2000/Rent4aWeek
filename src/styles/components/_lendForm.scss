@@ -75,6 +75,8 @@
     height: 50px;
     margin: 0 .3rem;
     padding: .2rem;
+    border-radius: .2rem;
+    overflow: hidden;
 
     &::before{
       @extend .center;
@@ -82,7 +84,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background-color: #b81515;
+      background-color: #d32424;
       width: 50%;
       height: 50%;
       border-radius: 50%;
@@ -90,7 +92,7 @@
     }
 
     &:hover{
-      background-color: rgba($black, .2);
+      background-color: rgba(lighten($black, 30%), .2);
 
       &::before{
         content: "X";

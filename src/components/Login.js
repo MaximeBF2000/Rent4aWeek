@@ -7,7 +7,6 @@ export default function Login() {
       <div className="loginBox">
         <h2>Login</h2>
         <button className="loginWithGoogleBtn loginBtn">Login with Google</button>
-        <button className="loginWithFacebookBtn loginBtn">Login with Facebook</button>
       </div>
     </div>,
     document.querySelector("#portalRoot")

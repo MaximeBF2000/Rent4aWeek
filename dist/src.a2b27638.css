@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
-.center, .lendCar_photosPreview .photoPreview::before, .lendFormBackground, .login .registerBox, .login .loginBox, .login, .header .header_right .datePicker, .header .searchbar button {
+.center, .lendCar_photosPreview .photoPreview::before, .lendFormBackground, .login .signInBox, .login, .header .header_right .datePicker, .header .searchbar button {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,7 +59,7 @@ a, button {
   background-color: rgba(127, 127, 127, 0.7);
 }
 
-.center, .lendCar_photosPreview .photoPreview::before, .lendFormBackground, .login .registerBox, .login .loginBox, .login, .header .header_right .datePicker, .header .searchbar button {
+.center, .lendCar_photosPreview .photoPreview::before, .lendFormBackground, .login .signInBox, .login, .header .header_right .datePicker, .header .searchbar button {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -178,47 +178,20 @@ a, button {
 .login h2 {
   margin-bottom: 2rem;
 }
-.login .loginBox {
+.login .signInBox {
   margin: 2rem;
   width: 30% !important;
   height: 70vh;
   background-color: #fefefe;
   padding: 2rem;
 }
-.login .loginBox .loginBtn {
+.login .signInBox .signInWithGoogleBtn {
   background-color: #f0c243;
   color: #fefefe;
   width: 70%;
   padding: 0.3rem 0;
   margin: 0.5rem 0;
   text-align: center;
-}
-.login .loginBox .loginBtn.loginWithFacebookBtn {
-  background-color: #4867AA;
-}
-.login .registerBox {
-  margin: 2rem;
-  width: 30% !important;
-  height: 70vh;
-  background-color: #fefefe;
-  padding: 2rem;
-}
-.login .registerBox .registerWithGoogleBtn {
-  background-color: #f0c243;
-  color: #fefefe;
-  width: 70%;
-  padding: 0.3rem 0;
-  margin: 0.5rem 0;
-  text-align: center;
-}
-.login .registerBox .registerWithFacebookBtn {
-  background-color: #f0c243;
-  color: #fefefe;
-  width: 70%;
-  padding: 0.3rem 0;
-  margin: 0.5rem 0;
-  text-align: center;
-  background-color: #4867AA;
 }
 
 .lendFormBackground {
@@ -284,20 +257,22 @@ a, button {
   height: 50px;
   margin: 0 0.3rem;
   padding: 0.2rem;
+  border-radius: 0.2rem;
+  overflow: hidden;
 }
 .lendCar_photosPreview .photoPreview::before {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #b81515;
+  background-color: #d32424;
   width: 50%;
   height: 50%;
   border-radius: 50%;
   color: #fefefe;
 }
 .lendCar_photosPreview .photoPreview:hover {
-  background-color: rgba(1, 1, 1, 0.2);
+  background-color: rgba(78, 78, 78, 0.2);
 }
 .lendCar_photosPreview .photoPreview:hover::before {
   content: "X";
@@ -308,7 +283,7 @@ a, button {
   object-fit: contain;
 }
 
-.center, .header .searchbar button, .header .header_right .datePicker, .login, .login .loginBox, .login .registerBox, .lendFormBackground, .lendCar_photosPreview .photoPreview::before {
+.center, .header .searchbar button, .header .header_right .datePicker, .login, .login .signInBox, .lendFormBackground, .lendCar_photosPreview .photoPreview::before {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -395,7 +370,7 @@ a, button {
     font-size: 1rem;
   }
 }
-.center, .header .searchbar button, .header .header_right .datePicker, .login, .login .loginBox, .login .registerBox, .lendFormBackground, .lendCar_photosPreview .photoPreview::before {
+.center, .header .searchbar button, .header .header_right .datePicker, .login, .login .signInBox, .lendFormBackground, .lendCar_photosPreview .photoPreview::before {
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
 
 export default function UserMenu({ visible }) {
-  const { user } = useContext(AppContext)
+  const { user, dispatch } = useContext(AppContext)
 
   const userMenuProps = {
     initial: { scale: 0, opacity: 0 },
@@ -12,6 +12,8 @@ export default function UserMenu({ visible }) {
     exit: { scale: 0, opacity: 0 },
     transition: { duration: .2 }
   }
+
+  const signOut = () => dispatch({ type: "UPDATE_USER", payload: null })
 
   if(!user){
     return (
@@ -21,8 +23,7 @@ export default function UserMenu({ visible }) {
             className="userMenu"
             {...userMenuProps}
           >
-            <Link to="/login"> <div className="userOption"> Login </div> </Link>
-            <Link to="/register"> <div className="userOption"> Register </div> </Link>
+            <Link to="/signin"> <div className="userOption"> SignIn </div> </Link>
           </motion.div>
         )}
       </AnimatePresence>
@@ -36,7 +37,8 @@ export default function UserMenu({ visible }) {
           className="userMenu"
           {...userMenuProps}
         >
-          <div className="menuTitle">Hello {user}</div>
+          <div className="menuTitle" style={{ padding: ".5rem" }}>Hello {user.displayName}</div>
+          <div className="userOption" onClick={signOut}> SignOut </div>
         </motion.div>
       )}
     </AnimatePresence>
