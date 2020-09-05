@@ -28,7 +28,9 @@ export default function Header() {
     if(user){
       setShowLendForm(ps => !ps)
     } else {
-      alert("You need to be connected to lend your car")
+      // alert("You need to be connected to lend your car")
+      // POUR DEV
+      setShowLendForm(ps => !ps)
     }
   }
 
